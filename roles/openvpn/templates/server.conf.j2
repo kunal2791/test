@@ -22,7 +22,8 @@ user nobody
 group nogroup
 persist-key
 persist-tun
-status openvpn-status.log
+status /var/log/openvpn-status.log
+log-append /var/log/openvpn.log
 verb 3
 crl-verify crl.pem
 management 127.0.0.1 5555
