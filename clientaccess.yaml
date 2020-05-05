@@ -1,0 +1,6 @@
+---
+- name: It will automate OpenVPN client cert genetation and revoke
+  hosts: vpn
+  become: true
+  roles:
+    - role: openvpn

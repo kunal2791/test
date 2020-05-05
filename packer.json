@@ -1,0 +1,22 @@
+{
+        "builders": [{
+                "type": "amazon-ebs",
+                "profile": "dev",
+                "region": "ap-south-1",
+                "vpc_id": "vpc-02635ea76f7e58b68",
+                "subnet_id": "subnet-0a516f47a447858a0",
+                "source_ami": "ami-0620d12a9cf777c87",
+                "instance_type": "t2.medium",
+                "iam_instance_profile": "prometheus-read-only",
+                "associate_public_ip_address": "true",
+                "ssh_timeout": "10m",
+                "ssh_username": "ubuntu",
+                "encrypt_boot": true,
+                "ami_name": "OpenVpn {{timestamp}}"
+        }],
+        "provisioners": [{
+                "type": "shell",
+                "script": "exe.sh",
+                "pause_before": "10s"
+        }]
+}
