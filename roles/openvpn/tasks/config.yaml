@@ -18,7 +18,7 @@
     line: "{{ item.line }}"
     state: present
   with_items:
-  - { regexp: 'port 8080', line: 'port {{ PORT }}' }
+  - { regexp: 'port 443', line: 'port {{ PORT }}' }
   - { regexp: 'proto tcp', line: 'proto {{ PROTOCOL }}' }
 
 - name: Getting public IP for client.conf
