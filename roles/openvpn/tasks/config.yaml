@@ -21,18 +21,18 @@
   - { regexp: 'port 443', line: 'port {{ PORT }}' }
   - { regexp: 'proto tcp', line: 'proto {{ PROTOCOL }}' }
 
-- name: Getting public IP for client.conf
-  ipify_facts:
+# - name: Getting public IP for client.conf
+#   ipify_facts:
 
-- name: Indicating PORT & PROTOCOL in client.conf
-  lineinfile:
-    dest: /{{ base_directory }}/client.conf
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    state: present
-  with_items:
-  - { regexp: 'proto udp', line: 'proto {{ PROTOCOL }}' }
-  - { regexp: 'remote my-server-1 1194', line: 'remote {{ ipify_public_ip }} {{ PORT }}' }
+# - name: Indicating PORT & PROTOCOL in client.conf
+#   lineinfile:
+#     dest: /{{ base_directory }}/client.conf
+#     regexp: "{{ item.regexp }}"
+#     line: "{{ item.line }}"
+#     state: present
+#   with_items:
+#   - { regexp: 'proto udp', line: 'proto {{ PROTOCOL }}' }
+#   - { regexp: 'remote my-server-1 1194', line: 'remote {{ ipify_public_ip }} {{ PORT }}' }
   notify:
     - daemon_reload
     - starting_openvpn
