@@ -15,7 +15,7 @@ KEY_NAME: "server"
 # Enter PROTOCOL on which OpenVpn will work
 PROTOCOL: "tcp"
 # Enter PORT on which OpenVpn will work
-PORT: "8080"
+PORT: "443"
 # Enter Server network on which OpenVpn will work
 openvpn_server_network: "10.8.0.0"
 base_directory: "etc/openvpn"
